@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="basketModule">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS App</title>
+    <!--Styles-->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--Styles End-->
+</head>
+<body>
+<h1>Basket</h1>
+<div ng-controller="basketCtrl">
+    <h2>Left {{left()}} from {{products.length}}</h2>
+    <table class="table table-striped">
+        <tr ng-repeat="product in products">
+            <td>
+                <input type="checkbox" ng-model="product.bought">
+            </td>
+            <td class="bought-{{product.bought}}">
+                {{product.name}}
+            </td>
+        </tr>
+    </table>
+    <form ng-submit="addProduct()">
+        <input class="form-group" type="text" placeholder="Add product" ng-model="newProductName">
+        <button class="btn btn-info" type="submit">Add</button>
+    </form>
+</div>
+<!--Scripts-->
+<script src="js/lib/angular.min.js"></script>
+<script src="js/app.js"></script>
+<!--Scripts End-->
+</body>
+</html>

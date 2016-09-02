@@ -1,0 +1,7 @@
+.bought-true {
+    text-decoration: line-through;
+}
+.bought-false {
+    text-decoration: underline;
+    color: red;
+}
